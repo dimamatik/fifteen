@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>dimamatik</Authors>
+    <Company>dimamatik@yandex.ru</Company>
+    <Copyright>dimamatik</Copyright>
+    <ApplicationIcon />
+    <StartupObject />
+    <NeutralLanguage>ru-RU</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/dimamatik/fifteen/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/dimamatik/fifteen</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dimamatik/fifteen</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DocumentationFile>D:\Projects\Fifteen\Fifteen\Fifteen.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>
