@@ -32,6 +32,13 @@ namespace Fifteen
                 return _field[x + y * Width];
             }
         }
+        /// <summary>
+        /// Достать порядковый номер пустой фишки
+        /// </summary>
+        public int EmptyIndex()
+        {
+            return _index;
+        }
 
         /// <summary>
         /// Размер поля, фактически Width * Height
@@ -180,14 +187,28 @@ namespace Fifteen
             }
         }
         /// <summary>
-        /// Передвинуть фишку в нужном направлении
-        /// Также проверяет, что фишка с такими координатами (0..Width-1, 0..Height-1) - играбельна
+        /// Передвинуть фишку, если она рядом с пустой клеткой
         /// </summary>
         /// <returns>Возвращает TRUE, если удалось, FALSE иначе</returns>
-        public bool Play(int x, int y, Direction dir)
+        public bool Play(int x, int y)
         {
-            if (x != _index % Width || y != _index / Width) return false;
-            else return Play(dir);
+            if (x < 0 || y < 0 || x >= Width || y >= Height) return false;
+            int x0 = _index % Width;
+            int y0 = _index / Width;
+
+            if (x0 == x)
+            {
+                if (y == y0 - 1) return Play(Direction.UP);
+                else if (y == y0 + 1) return Play(Direction.DOWN);
+                else return false;
+            }
+            else if (y0 == y)
+            {
+                if (x == x0 - 1) return Play(Direction.LEFT);
+                else if (x == x0 + 1) return Play(Direction.RIGHT);
+                else return false;
+            }
+            else return false;
         }
         /// <summary>
         /// Передвигает по змеевидному пути пустой элемент

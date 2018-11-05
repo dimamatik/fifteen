@@ -21,6 +21,26 @@
             Направления, в котором двигается играемая фишка
             </summary>
         </member>
+        <member name="F:Fifteen.Direction.UP">
+            <summary>
+            Вверх
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.DOWN">
+            <summary>
+            Вниз
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.LEFT">
+            <summary>
+            Влево
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.RIGHT">
+            <summary>
+            Вправо
+            </summary>
+        </member>
         <member name="T:Fifteen.Game">
             <summary>
             Основной класс для игры на поле m*n 
@@ -44,6 +64,11 @@
         <member name="P:Fifteen.Game.Item(System.Int32,System.Int32)">
             <summary>
             Достать фишку, лежащую в заданных координатах
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.EmptyIndex">
+            <summary>
+            Достать порядковый номер пустой фишки
             </summary>
         </member>
         <member name="F:Fifteen.Game._max">
@@ -90,10 +115,9 @@
             </summary>
             <returns>Возвращает TRUE, если удалось, FALSE иначе</returns>
         </member>
-        <member name="M:Fifteen.Game.Play(System.Int32,System.Int32,Fifteen.Direction)">
+        <member name="M:Fifteen.Game.Play(System.Int32,System.Int32)">
             <summary>
-            Передвинуть фишку в нужном направлении
-            Также проверяет, что фишка с такими координатами (0..Width-1, 0..Height-1) - играбельна
+            Передвинуть фишку, если она рядом с пустой клеткой
             </summary>
             <returns>Возвращает TRUE, если удалось, FALSE иначе</returns>
         </member>
